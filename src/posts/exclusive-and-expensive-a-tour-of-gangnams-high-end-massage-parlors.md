@@ -4,7 +4,7 @@ slug: "exclusive-and-expensive-a-tour-of-gangnams-high-end-massage-parlors"
 date: "2024-06-12T15:00:53"
 categories:
   - "health"
-sticky: true
+sticky: false
 featured: false
 views: 3277
 layout: post.njk
