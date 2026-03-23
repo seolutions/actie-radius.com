@@ -11,7 +11,7 @@ layout: post.njk
 ---
 
 Gangnam’s skyline of glass towers and neon panels looks impressive at midday, yet the district truly shows its character once twilight settles. Billboards blink in citrus hues, the aroma of barbecued pork drifts through alleyways, and an unmistakable chorus of chart hits escapes from every second doorway. Those doorways lead to *noraebang*—private singing rooms that have helped make Gangnam the capital’s most celebrated playground long after buses stop running.
-From overseas tourists humming along to K-pop classics to Seoulites celebrating promotions, 쩜오사이트 karaoke here has turned into both a social glue and an economic powerhouse. According to Ministry of Culture figures from 2024, more than thirty-five thousand licensed *noraebang* operate across South Korea, and nearly one in seven sits inside greater Gangnam. Numbers tell only part of the story, though; the mood inside each booth explains why local nights stretch to sunrise.
+From overseas tourists humming along to K-pop classics to Seoulites celebrating promotions, [쩜오사이트](https://tendot5.com) karaoke here has turned into both a social glue and an economic powerhouse. According to Ministry of Culture figures from 2024, more than thirty-five thousand licensed *noraebang* operate across South Korea, and nearly one in seven sits inside greater Gangnam. Numbers tell only part of the story, though; the mood inside each booth explains why local nights stretch to sunrise.
 
 **A Neighborhood That Never Sleeps**
 
