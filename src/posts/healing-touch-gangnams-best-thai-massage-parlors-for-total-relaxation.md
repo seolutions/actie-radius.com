@@ -4,7 +4,7 @@ slug: "healing-touch-gangnams-best-thai-massage-parlors-for-total-relaxation"
 date: "2025-01-05T14:38:18"
 categories:
   - "health"
-sticky: true
+sticky: false
 featured: false
 views: 1219
 layout: post.njk
