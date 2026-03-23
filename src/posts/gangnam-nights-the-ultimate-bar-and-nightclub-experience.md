@@ -3,8 +3,8 @@ title: "Gangnam Nights: The Ultimate Bar and Nightclub Experience"
 slug: "gangnam-nights-the-ultimate-bar-and-nightclub-experience"
 date: "2024-12-16T16:12:50"
 categories:
-sticky: true
-featured: true
+sticky: false
+featured: false
 views: 1189
 layout: post.njk
 ---
