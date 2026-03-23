@@ -4,7 +4,7 @@ slug: "let-loose-after-a-busy-day-gangnam-karaoke-bars-you-dont-want-to-miss"
 date: "2025-01-02T18:00:34"
 categories:
   - "misc"
-sticky: true
+sticky: false
 featured: false
 views: 1144
 layout: post.njk
