@@ -1,0 +1,14 @@
+{
+  "name": "actie-radius-com",
+  "version": "1.0.0",
+  "description": "Actie Radius - Lifestyle, Health & Entertainment Hub",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "convert": "node convert-posts.js"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "markdown-it": "^14.0.0"
+  }
+}

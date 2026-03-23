@@ -1,0 +1,35 @@
+---
+layout: base.njk
+title: Nutrition & Medicine
+permalink: /category/nutrion-medicine/
+---
+
+<section class="category-hero">
+  <div class="container">
+    <div class="category-hero-icon">&#x1F957;</div>
+    <h1 class="page-title">Nutrition & Medicine</h1>
+    <p class="page-subtitle">Diet plans, supplements, and medical nutrition</p>
+  </div>
+</section>
+
+<section class="category-posts">
+  <div class="container">
+    <div class="posts-grid">
+      {% for post in collections.cat_nutrion-medicine %}
+      <article class="post-card">
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            <span class="category-label">Nutrition & Medicine</span>
+            <time datetime="{{ post.data.date }}">{{ post.data.date | dateShort }}</time>
+          </div>
+          <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+          <p class="post-card-excerpt">{{ post.content | excerpt }}</p>
+        </div>
+        <div class="post-card-footer">
+          <a href="{{ post.url }}" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

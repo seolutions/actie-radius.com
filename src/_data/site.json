@@ -1,0 +1,15 @@
+{
+  "title": "Actie Radius",
+  "description": "Your Lifestyle, Health & Entertainment Hub",
+  "url": "https://actie-radius.com",
+  "author": "Actie Radius",
+  "email": "admin@actie-radius.com",
+  "categories": [
+    { "slug": "health", "name": "Health", "icon": "🏥", "description": "Wellness tips, medical insights, and healthy living guides" },
+    { "slug": "fitness", "name": "Fitness", "icon": "💪", "description": "Workouts, training programs, and fitness motivation" },
+    { "slug": "excersice", "name": "Exercise", "icon": "🏃", "description": "Exercise routines and physical activity guides" },
+    { "slug": "nutrion-medicine", "name": "Nutrition & Medicine", "icon": "🥗", "description": "Diet plans, supplements, and medical nutrition" },
+    { "slug": "misc", "name": "Lifestyle", "icon": "✨", "description": "Entertainment, travel, and lifestyle content" },
+    { "slug": "fitness-app", "name": "Fitness App", "icon": "📱", "description": "App reviews and digital fitness tools" }
+  ]
+}

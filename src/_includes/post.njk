@@ -1,0 +1,60 @@
+---
+layout: base.njk
+---
+
+<article class="post-single">
+  <div class="container container-narrow">
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="{{ date }}">{{ date | dateFormat }}</time>
+        {% set cats = categories | displayCategories %}
+        {% if cats.length %}
+          <span class="meta-sep">&middot;</span>
+          {% for cat in cats %}
+            <a href="/category/{{ cat }}/" class="post-category">{{ cat | categoryName }}</a>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <h1 class="post-title">{{ title }}</h1>
+    </header>
+
+    <div class="post-content prose">
+      {{ content | safe }}
+    </div>
+
+    <footer class="post-footer">
+      {% if cats.length %}
+      <div class="post-tags">
+        {% for cat in cats %}
+          <a href="/category/{{ cat }}/" class="tag">{{ cat | categoryName }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <nav class="post-nav">
+        {% set allPosts = collections.posts %}
+        {% set currentIndex = -1 %}
+        {% for p in allPosts %}
+          {% if p.url == page.url %}
+            {% set currentIndex = loop.index0 %}
+          {% endif %}
+        {% endfor %}
+
+        <div class="post-nav-links">
+          {% if currentIndex > 0 %}
+          <a href="{{ allPosts[currentIndex - 1].url }}" class="post-nav-link post-nav-next">
+            <span class="post-nav-label">&larr; Newer</span>
+            <span class="post-nav-title">{{ allPosts[currentIndex - 1].data.title }}</span>
+          </a>
+          {% endif %}
+          {% if currentIndex < allPosts.length - 1 %}
+          <a href="{{ allPosts[currentIndex + 1].url }}" class="post-nav-link post-nav-prev">
+            <span class="post-nav-label">Older &rarr;</span>
+            <span class="post-nav-title">{{ allPosts[currentIndex + 1].data.title }}</span>
+          </a>
+          {% endif %}
+        </div>
+      </nav>
+    </footer>
+  </div>
+</article>

@@ -1,0 +1,206 @@
+---
+layout: base.njk
+title: Home
+---
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">Lifestyle &middot; Health &middot; Entertainment</div>
+      <h1>Live Well. <span>Stay Informed.</span> Be Inspired.</h1>
+      <p>Your trusted hub for expert health insights, fitness guidance, lifestyle tips, and entertainment — all in one place.</p>
+      <div class="hero-actions">
+        <a href="#recent-posts" class="btn btn-primary btn-lg">Explore Articles</a>
+        <a href="/about/" class="btn btn-white btn-lg">Learn About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What We Do Section -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Empowering Your Best Life</h2>
+      <p class="section-subtitle">We curate and create content across health, fitness, nutrition, and lifestyle to help you make informed decisions and live fully.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F3E5;</div>
+        <h3>Health & Wellness</h3>
+        <p>From medical breakthroughs to everyday wellness tips, we bring you science-backed health content you can trust and act on.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F4AA;</div>
+        <h3>Fitness & Exercise</h3>
+        <p>Workout routines, training tips, and motivation to keep you moving — whether you're a beginner or a seasoned athlete.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F957;</div>
+        <h3>Nutrition & Diet</h3>
+        <p>Explore diet plans, supplement guides, and nutritional science to fuel your body the right way.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x2728;</div>
+        <h3>Lifestyle</h3>
+        <p>Entertainment, travel, culture, and everyday life — discover content that enriches your world beyond the gym.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F4F1;</div>
+        <h3>Tech & Apps</h3>
+        <p>Reviews and guides on fitness trackers, health apps, and the technology that supports your wellness journey.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F9E0;</div>
+        <h3>Expert Insights</h3>
+        <p>In-depth articles backed by research and expert opinions to keep you informed on what matters most.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who We Are Section -->
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content">
+        <span class="section-label">Who We Are</span>
+        <h2>A Passionate Team Dedicated to Your Well-Being</h2>
+        <p>Actie Radius was born from a simple idea: everyone deserves access to quality health, fitness, and lifestyle content. Since 2016, we've been publishing insights that help people make better choices for their bodies and minds.</p>
+        <p>Our name — Actie Radius — represents the sphere of action and influence we aim to create. We believe that small, informed actions create a ripple effect that transforms your entire life.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-number">86+</div>
+            <div class="stat-label">Articles</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">9</div>
+            <div class="stat-label">Years Active</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">900K+</div>
+            <div class="stat-label">Page Views</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-card">
+          <div class="about-card-icon">&#x1F3AF;</div>
+          <h4>Our Mission</h4>
+          <p>Empower people to live healthier, happier lives</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">&#x1F30D;</div>
+          <h4>Global Reach</h4>
+          <p>Readers from around the world</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">&#x1F4DA;</div>
+          <h4>Research-Backed</h4>
+          <p>Science-informed content</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">&#x2764;&#xFE0F;</div>
+          <h4>Community First</h4>
+          <p>Built for our readers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recent Posts (Sticky Posts in Full) -->
+<section class="section section-alt" id="recent-posts">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Recent Posts</span>
+      <h2 class="section-title">Editor's Picks</h2>
+      <p class="section-subtitle">Our most noteworthy articles, handpicked for you.</p>
+    </div>
+    <div class="sticky-posts">
+      {% for post in collections.stickyPosts | limit(6) %}
+      <article class="sticky-post">
+        <div class="sticky-badge">&#x2B50; Featured</div>
+        <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+        <div class="sticky-post-meta">
+          <time datetime="{{ post.data.date }}">{{ post.data.date | dateFormat }}</time>
+          {% set cats = post.data.categories | displayCategories %}
+          {% for cat in cats %}
+            <span class="meta-sep">&middot;</span>
+            <a href="/category/{{ cat }}/" class="post-category">{{ cat | categoryName }}</a>
+          {% endfor %}
+        </div>
+        <div class="sticky-post-content">
+          {{ post.content | safe }}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Browse by Category -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Browse</span>
+      <h2 class="section-title">Explore by Category</h2>
+      <p class="section-subtitle">Find exactly what you're looking for across our content library.</p>
+    </div>
+    <div class="categories-grid">
+      {% for cat in site.categories %}
+      <a href="/category/{{ cat.slug }}/" class="category-card">
+        <div class="category-icon">{{ cat.icon }}</div>
+        <div>
+          <h3>{{ cat.name }}</h3>
+          <p>{{ cat.description }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Latest Articles Grid -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Latest</span>
+      <h2 class="section-title">More From the Blog</h2>
+    </div>
+    <div class="posts-grid">
+      {% for post in collections.posts | limit(6) %}
+      <article class="post-card">
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            {% set cats = post.data.categories | displayCategories %}
+            {% if cats.length %}
+              <span class="category-label">{{ cats[0] | categoryName }}</span>
+            {% endif %}
+            <time datetime="{{ post.data.date }}">{{ post.data.date | dateShort }}</time>
+          </div>
+          <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+          <p class="post-card-excerpt">{{ post.content | excerpt }}</p>
+        </div>
+        <div class="post-card-footer">
+          <a href="{{ post.url }}" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Stay in the Loop</h2>
+    <p>Discover new articles on health, fitness, lifestyle, and more. Bookmark us and never miss a post.</p>
+    <div class="cta-actions">
+      <a href="/category/health/" class="btn btn-white btn-lg">Browse Health</a>
+      <a href="/category/fitness/" class="btn btn-outline btn-lg" style="color:white;border-color:white;">Browse Fitness</a>
+    </div>
+  </div>
+</section>
