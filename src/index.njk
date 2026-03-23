@@ -5,6 +5,10 @@ title: Home
 
 <!-- Hero Section -->
 <section class="hero">
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1400&h=800&fit=crop&q=80" alt="Active healthy lifestyle" loading="eager">
+  </div>
+  <div class="hero-overlay"></div>
   <div class="container">
     <div class="hero-content">
       <div class="hero-badge">Lifestyle &middot; Health &middot; Entertainment</div>
@@ -28,34 +32,25 @@ title: Home
     </div>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon">&#x1F3E5;</div>
+        <div class="feature-img">
+          <img src="https://images.unsplash.com/photo-1505576399279-0f3e8a5db5ed?w=600&h=400&fit=crop&q=80" alt="Health and wellness" loading="lazy">
+        </div>
         <h3>Health & Wellness</h3>
         <p>From medical breakthroughs to everyday wellness tips, we bring you science-backed health content you can trust and act on.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">&#x1F4AA;</div>
+        <div class="feature-img">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop&q=80" alt="Fitness and exercise" loading="lazy">
+        </div>
         <h3>Fitness & Exercise</h3>
         <p>Workout routines, training tips, and motivation to keep you moving — whether you're a beginner or a seasoned athlete.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">&#x1F957;</div>
+        <div class="feature-img">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop&q=80" alt="Nutrition and diet" loading="lazy">
+        </div>
         <h3>Nutrition & Diet</h3>
         <p>Explore diet plans, supplement guides, and nutritional science to fuel your body the right way.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#x2728;</div>
-        <h3>Lifestyle</h3>
-        <p>Entertainment, travel, culture, and everyday life — discover content that enriches your world beyond the gym.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#x1F4F1;</div>
-        <h3>Tech & Apps</h3>
-        <p>Reviews and guides on fitness trackers, health apps, and the technology that supports your wellness journey.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#x1F9E0;</div>
-        <h3>Expert Insights</h3>
-        <p>In-depth articles backed by research and expert opinions to keep you informed on what matters most.</p>
       </div>
     </div>
   </div>
@@ -85,27 +80,8 @@ title: Home
           </div>
         </div>
       </div>
-      <div class="about-visual">
-        <div class="about-card">
-          <div class="about-card-icon">&#x1F3AF;</div>
-          <h4>Our Mission</h4>
-          <p>Empower people to live healthier, happier lives</p>
-        </div>
-        <div class="about-card">
-          <div class="about-card-icon">&#x1F30D;</div>
-          <h4>Global Reach</h4>
-          <p>Readers from around the world</p>
-        </div>
-        <div class="about-card">
-          <div class="about-card-icon">&#x1F4DA;</div>
-          <h4>Research-Backed</h4>
-          <p>Science-informed content</p>
-        </div>
-        <div class="about-card">
-          <div class="about-card-icon">&#x2764;&#xFE0F;</div>
-          <h4>Community First</h4>
-          <p>Built for our readers</p>
-        </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=700&h=800&fit=crop&q=80" alt="Wellness and mindfulness" loading="lazy">
       </div>
     </div>
   </div>
@@ -122,7 +98,7 @@ title: Home
     <div class="sticky-posts">
       {% for post in collections.stickyPosts | limit(6) %}
       <article class="sticky-post">
-        <div class="sticky-badge">&#x2B50; Featured</div>
+        <div class="sticky-badge">Featured</div>
         <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
         <div class="sticky-post-meta">
           <time datetime="{{ post.data.date }}">{{ post.data.date | dateFormat }}</time>
@@ -150,10 +126,20 @@ title: Home
       <p class="section-subtitle">Find exactly what you're looking for across our content library.</p>
     </div>
     <div class="categories-grid">
+      {% set catImages = {
+        "health": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop&q=80",
+        "fitness": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=400&fit=crop&q=80",
+        "excersice": "https://images.unsplash.com/photo-1486218119243-13883505764c?w=600&h=400&fit=crop&q=80",
+        "nutrion-medicine": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop&q=80",
+        "misc": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop&q=80",
+        "fitness-app": "https://images.unsplash.com/photo-1510017803434-a899398421b3?w=600&h=400&fit=crop&q=80"
+      } %}
       {% for cat in site.categories %}
       <a href="/category/{{ cat.slug }}/" class="category-card">
-        <div class="category-icon">{{ cat.icon }}</div>
-        <div>
+        <div class="category-card-img">
+          <img src="{{ catImages[cat.slug] }}" alt="{{ cat.name }}" loading="lazy">
+        </div>
+        <div class="category-card-body">
           <h3>{{ cat.name }}</h3>
           <p>{{ cat.description }}</p>
         </div>
@@ -195,6 +181,10 @@ title: Home
 
 <!-- CTA Section -->
 <section class="cta-section">
+  <div class="cta-bg">
+    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1400&h=600&fit=crop&q=80" alt="Yoga and wellness" loading="lazy">
+  </div>
+  <div class="cta-overlay"></div>
   <div class="container">
     <h2>Stay in the Loop</h2>
     <p>Discover new articles on health, fitness, lifestyle, and more. Bookmark us and never miss a post.</p>
