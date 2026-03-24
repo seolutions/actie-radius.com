@@ -3,8 +3,8 @@ title: "Gangnam Nightlife After Dark: How Seoul’s Trend Hub Stays Awake"
 slug: "gangnam-nightlife-after-dark-how-seouls-trend-hub-stays-awake"
 date: "2025-09-08T22:00:00"
 categories:
-sticky: true
-featured: true
+sticky: false
+featured: false
 views: 223
 layout: post.njk
 ---
